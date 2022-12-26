@@ -17,10 +17,10 @@ end
 writeMessage("Startup finished")
 while true do
     doCrafting()
-    -- Wait two Redstone ticks for the Redstone Signal to update
-    sleep(0.2)
+    -- Wait for the Redstone Signal to update
+    sleep(0.6)
     -- Spin in a loop till crafting is done
-    while redstone.getInput("back") do
-        sleep(0.2)
+    while redstone.getInput("top") do
+        sleep(0.6)
     end
 end

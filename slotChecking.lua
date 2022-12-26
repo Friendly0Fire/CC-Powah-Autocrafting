@@ -11,6 +11,10 @@ function isBlazeRod(slotID)
     return compareItemName("minecraft:blaze_rod", slotID)
 end
 
+function isBlazePowder(slotID)
+    return compareItemName("minecraft:blaze_powder", slotID)
+end
+
 function isDiamond(slotID)
     return compareItemName("minecraft:diamond", slotID)
 end

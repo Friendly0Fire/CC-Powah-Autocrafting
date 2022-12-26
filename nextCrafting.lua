@@ -7,6 +7,15 @@ function shouldCraftBlaze()
     return false, -1
 end
 
+function shouldCraftBlaze2()
+    for slotNum = 1, 16, 1 do
+        if isBlazePowder(slotNum) and turtle.getItemDetail(slotNum).count >= 4 then
+            return true, slotNum
+        end
+    end
+    return false, -1
+end
+
 function shouldCraftDiamond()
     for slotNum = 1, 16, 1 do
         if isDiamond(slotNum) then
@@ -35,7 +44,7 @@ function shouldCraftIronGold()
             goldSlotID = slotNum
         end
     end
-    
+
     local canCraft = ironSlotID > 0 and goldSlotID > 0
     return canCraft, ironSlotID, goldSlotID
 end

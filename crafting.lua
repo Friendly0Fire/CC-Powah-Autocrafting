@@ -6,6 +6,13 @@ function craftBlazeRod(blazeRodSlotID)
     turtle.drop(1)
 end
 
+function craftBlazePowder(blazePowderSlotID)
+    writeMessage("Found Blaze Powder at "..blazePowderSlotID.."\n"..
+                 "Crafting with Blaze Powder")
+    turtle.select(blazePowderSlotID)
+    turtle.drop(4)
+end
+
 function craftDiamond(diamondSlotID)
     writeMessage("Found Diamond at "..diamondSlotID.."\n"..
                  "Crafting with Diamond")
@@ -49,7 +56,13 @@ function doCrafting()
         craftBlazeRod(blazeRodSlotID)
         return
     end
-    
+
+    local canCraft, blazePowderSlotID = shouldCraftBlaze2()
+    if canCraft then
+        craftBlazePowder(blazePowderSlotID)
+        return
+    end
+
     local canCraft, diamondSlotID = shouldCraftDiamond()
     if canCraft then
         craftDiamond(diamondSlotID)
